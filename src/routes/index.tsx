@@ -1,7 +1,7 @@
 import React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
-import TractorsList from '../ui/pages/TractorsList';
+import {TractorsList} from '../ui/pages/TractorsList';
 
 const {Navigator, Screen} = createNativeStackNavigator();
 
