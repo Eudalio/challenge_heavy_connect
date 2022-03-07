@@ -4,12 +4,8 @@ import React, {
 	useImperativeHandle,
 	useCallback,
 } from 'react';
-import {Modal} from 'react-native';
-
-type TypeModal = {
-	children: React.ReactElement | null;
-	defaultOpened?: boolean;
-};
+import {Modal, SafeAreaView} from 'react-native';
+import {TypeModal} from './types';
 
 export const ModalScreen = forwardRef(
 	({children, defaultOpened = false}: TypeModal, ref) => {
@@ -26,6 +22,10 @@ export const ModalScreen = forwardRef(
 			[close],
 		);
 
-		return isOpen ? <Modal animationType="slide">{children}</Modal> : null;
+		return isOpen ? (
+			<Modal animationType="slide">
+				<SafeAreaView>{children}</SafeAreaView>
+			</Modal>
+		) : null;
 	},
 );
