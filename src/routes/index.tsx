@@ -1,18 +1,18 @@
 import React from 'react';
-import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
-import {TractorsList} from '../ui/pages/TractorsList';
+
+import {TractorsList} from '~/ui/pages/TractorsList/TractorsList';
+import {Details} from '~/ui/pages/Details';
+
+import {PAGES} from './types';
 
 const {Navigator, Screen} = createNativeStackNavigator();
 
-const Routes = () => {
+export const Routes = () => {
 	return (
-		<NavigationContainer>
-			<Navigator screenOptions={{headerShown: false}}>
-				<Screen name="Home" component={TractorsList} />
-			</Navigator>
-		</NavigationContainer>
+		<Navigator screenOptions={{headerShown: false}}>
+			<Screen name={PAGES.TRACTORS} component={TractorsList} />
+			<Screen name={PAGES.DETAILS} component={Details} />
+		</Navigator>
 	);
 };
-
-export default Routes;
