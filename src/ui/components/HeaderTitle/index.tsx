@@ -1,13 +1,9 @@
 import React from 'react';
 
-import {Container, HeaderText} from './styles';
+import * as S from './styles';
 
-const HeaderTitle: React.FC = () => {
-	return (
-		<Container>
-			<HeaderText>Tractor Inspection</HeaderText>
-		</Container>
-	);
-};
-
-export default HeaderTitle;
+export const HeaderTitle: React.FC = () => (
+	<S.Container>
+		<S.HeaderText>Tractor Inspection</S.HeaderText>
+	</S.Container>
+);
