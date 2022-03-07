@@ -1,10 +1,10 @@
 import React from 'react';
-import {Icon} from '../Icon';
 import Icons from 'react-native-vector-icons/Ionicons';
-
-import {Container, BtnFilterName, BtnFilterNameText} from './styles';
 import {observer} from 'mobx-react-lite';
-import {useStore} from '../../../stores';
+
+import {useStore} from '~/stores/hooks';
+import {Icon} from '../Icon';
+import {Container, BtnFilterName, BtnFilterNameText} from './styles';
 
 export const FilterBar = observer(() => {
 	const {tractors: store} = useStore();
