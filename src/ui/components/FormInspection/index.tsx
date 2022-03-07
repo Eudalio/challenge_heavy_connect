@@ -147,7 +147,7 @@ export const FormInspection = observer(({closeModal, type}: PropsModal) => {
 				<S.TextInput
 					placeholder="Add comment"
 					placeholderTextColor={colors.placeholderInput}
-					returnKeyType="next"
+					returnKeyType="done"
 					multiline
 					numberOfLines={3}
 					value={details}
