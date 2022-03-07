@@ -1,7 +1,5 @@
 import React from 'react';
 
-import {Container} from './style';
+import * as S from './style';
 
-export const Icon = ({...props}) => {
-	return <Container>{props.children}</Container>;
-};
+export const Icon = ({...props}) => <S.Container>{props.children}</S.Container>;
