@@ -36,7 +36,7 @@ export const GroupButtons = styled.View`
 
 export const Button = styled.TouchableOpacity`
 	height: 55px;
-	width: 48%;
+	flex: 1;
 	align-items: center;
 	justify-content: center;
 	border-radius: 28px;
@@ -47,6 +47,7 @@ export const Button = styled.TouchableOpacity`
 export const BtnDate = styled.TouchableOpacity`
 	height: 50px;
 	border: 1px solid #2f3542;
+	flex-direction: row;
 	align-items: center;
 	justify-content: center;
 	border-radius: 10px;
