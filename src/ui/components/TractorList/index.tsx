@@ -1,57 +1,30 @@
 import React from 'react';
 import {FlatList} from 'react-native';
 import {observer} from 'mobx-react-lite';
-import {
-	Container,
-	HeaderList,
-	LabelList,
-	CountLengthList,
-	TractorBox,
-	TractorPicture,
-	TractorInfo,
-	TractorName,
-	TractorID,
-	TractorStatus,
-	TractorStatusText,
-	TractorStatusColor,
-} from './styles';
-import {useStore} from '../../../stores';
+import {useStore} from '~/stores/hooks';
+import {TractorItem} from '~/ui/components/TractorItem';
+import * as S from './styles';
 
 export const TractorList = observer(() => {
 	const {tractors: store} = useStore();
 	const {tractors, countTractors} = store;
-	const renderItem = ({item}) => (
-		<TractorBox>
-			<TractorPicture
-				source={{
-					uri: 'https://reactnativecode.com/wp-content/uploads/2017/05/react_thumb_install.png',
-				}}
-			/>
-			<TractorInfo>
-				<TractorName>{item.name}</TractorName>
-				<TractorID>{item.id}</TractorID>
-				<TractorStatus>
-					<TractorStatusColor color="#FECA57" />
-					<TractorStatusText>Need Repair</TractorStatusText>
-				</TractorStatus>
-			</TractorInfo>
-		</TractorBox>
-	);
+
+	const renderItem = ({item}) => <TractorItem {...item} />;
 
 	return (
 		<>
-			<Container>
-				<HeaderList>
-					<LabelList>Tractor List</LabelList>
-					<CountLengthList>({countTractors} Itens)</CountLengthList>
-				</HeaderList>
+			<S.Container>
+				<S.HeaderList>
+					<S.LabelList>Tractor List</S.LabelList>
+					<S.CountLengthList>({countTractors} Itens)</S.CountLengthList>
+				</S.HeaderList>
 				<FlatList
 					data={tractors}
-					keyExtractor={item => item.key}
+					keyExtractor={item => item.fieldKey.toString()}
 					renderItem={renderItem}
 					showsVerticalScrollIndicator={false}
 				/>
-			</Container>
+			</S.Container>
 		</>
 	);
 });
