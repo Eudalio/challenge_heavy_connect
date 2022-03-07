@@ -1,9 +1,7 @@
 import React from 'react';
 
-import {Container} from './style';
+import * as S from './style';
 
-function Header({...props}): React.ReactElement {
-	return <Container>{props.children}</Container>;
-}
-
-export default Header;
+export const Header = ({...props}) => (
+	<S.Container>{props.children}</S.Container>
+);
