@@ -1,12 +1,9 @@
 import React, {useRef} from 'react';
-import {AddTractor} from '../../pages/AddTractor';
-import {ModalScreen} from '../Modal';
+import {ModalTractor} from '~/ui/pages/Modal/ModalTractor';
+import {ModalScreen} from '~/ui/components/Modal';
 
+import {TypeFabButton} from './types';
 import {Container, FabText} from './styles';
-
-type TypeFabButton = {
-	title: string;
-};
 
 export const FabButton = ({title}: TypeFabButton) => {
 	const modalAddTractor = useRef(null);
@@ -16,7 +13,7 @@ export const FabButton = ({title}: TypeFabButton) => {
 				<FabText>{title}</FabText>
 			</Container>
 			<ModalScreen ref={modalAddTractor}>
-				<AddTractor closeModal={modalAddTractor} />
+				<ModalTractor closeModal={modalAddTractor} type="register" />
 			</ModalScreen>
 		</>
 	);
